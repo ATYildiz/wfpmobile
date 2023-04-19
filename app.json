@@ -1,7 +1,4 @@
 {
-  "name": "wfpmobile",
-  "displayName": "Watch For Points",
-  "react-native-google-mobile-ads": {
-    "android_app_id": "ca-app-pub-4132241213138189~8538439763"
-  }
+  "name": "wfpMobile",
+  "displayName": "wfpMobile"
 }

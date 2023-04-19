@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, Text, Alert} from 'react-native';
 import styles from '../SignUp/Singup.style';
 import {Formik} from 'formik';
 import Button from '../../components/Button';
@@ -17,6 +17,9 @@ const Singup = ({navigation}) => {
   };
   function HandleSingup(formValues) {
     console.log(formValues);
+    Alert.alert('Başarılı', 'Kayıt işleminiz başarılı bir şekilde tamamlandı', [
+      {text: 'OK', onPress: () => HandleGoBack()},
+    ]);
   }
 
   return (
@@ -28,7 +31,7 @@ const Singup = ({navigation}) => {
             <Input
               onType={handleChange('usermail')}
               value={values.usermail}
-              placeholder="Kullanıcı Adınızı Giriniz..."
+              placeholder="E-Posta Adresinizi Giriniz..."
             />
             <Input
               onType={handleChange('password')}

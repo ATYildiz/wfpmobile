@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface wfpmobileTests : XCTestCase
+@interface wfpMobileTests : XCTestCase
 
 @end
 
-@implementation wfpmobileTests
+@implementation wfpMobileTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

@@ -5,8 +5,10 @@ import Button from '../../Button/Button';
 import styles from './ShopCard.style';
 const ShopCard = ({product, puan}) => {
   let Price = Math.ceil(product.price * 130);
-
   function HandleDetail() {
+    
+  }
+  function HandleBuy() {
     if (Price > puan) {
       Alert.alert('Bilgi', 'Puanınız Yetersiz', [
         {text: 'OK', onPress: () => console.log('OK Pressed')},
@@ -14,9 +16,9 @@ const ShopCard = ({product, puan}) => {
     } else {
       Alert.alert(
         'Bilgi',
-        {Price} +
+        Price +
           " Puan'a Bu Ürünü Almayı Onaylıyor Musunuz? (Mevcut Puanınız: " +
-          {puan} +
+          puan +
           ')',
         [
           {
@@ -36,7 +38,7 @@ const ShopCard = ({product, puan}) => {
       <View style={styles.body_container}>
         <Text style={styles.title}>{product.title}</Text>
         <Button
-          text={Price + " Puan'a Satın Al."}
+          text={"Satın Al."}
           style={'third'}
           onPress={HandleDetail}
         />

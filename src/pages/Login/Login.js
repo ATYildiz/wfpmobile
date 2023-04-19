@@ -6,11 +6,11 @@ import {Formik} from 'formik';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-let kullaniciAdi = 'ahmet';
-let sifre = '123';
+//let kullaniciAdi = 'ahmet';
+//let sifre = '123';
 
 const Login = ({navigation}) => {
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
   function HandleSingup() {
     navigation.navigate('SingupPage');
   }
@@ -23,13 +23,16 @@ const Login = ({navigation}) => {
     password: '',
   };
   function HandleLogin(formValues) {
-    if (formValues.usermail == kullaniciAdi && formValues.password == sifre) {
+    console.log(formValues);
+   // if (formValues.usermail == kullaniciAdi && formValues.password == sifre) {
       HandleHome();
-    } else {
-      Alert.alert('Bilgi', 'Kullanıcı Adı  veya Şifreniz Hatalıdır ', [
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
-      ]);
-    }
+      
+   // } else {
+    //  Alert.alert('Bilgi', 'Mailiniz veya Şifreniz Hatalıdır ', [
+      //  {text: 'OK', onPress: () => console.log('OK Pressed')},
+     // ]);
+    //}
+    //loading={loading}
   }
 
   return (
@@ -41,14 +44,14 @@ const Login = ({navigation}) => {
             <Input
               onType={handleChange('usermail')}
               value={values.usermail}
-              placeholder="Kullanıcı Adınızı Giriniz..."
+              placeholder="E-Posta Adresinizi Giriniz..."
             />
             <Input
               onType={handleChange('password')}
               value={values.password}
               placeholder="Şifrenizi Giriniz..."
             />
-            <Button text="Giriş Yap" onPress={handleSubmit} loading={loading} />
+            <Button text="Giriş Yap" onPress={handleSubmit}  />
           </>
         )}
       </Formik>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {SafeAreaView, Text, ImageBackground, FlatList} from 'react-native';
+import {SafeAreaView, ImageBackground, FlatList} from 'react-native';
 import axios from 'axios';
 
 import BackGroundImage from '../../images/istockphoto-1030957090-170667a.jpg';
@@ -10,7 +10,6 @@ let shopsItemUrl = 'https://fakestoreapi.com/products';
 
 const Shop = ({puan}) => {
   const [data, setData] = useState([]);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,7 +18,7 @@ const Shop = ({puan}) => {
     const {data: shopsData} = await axios.get(shopsItemUrl);
     setData(shopsData);
   };
-  const renderShopItem = ({item}) => <ShopCard product={item} puan={puan} />;
+  const renderShopItem = ({item}) => <ShopCard product={item} puan={puan}/>;
 
   return (
     <SafeAreaView style={styles.SafeArea_container}>
